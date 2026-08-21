@@ -28,7 +28,7 @@ android.sdk = 33
 android.ndk = 25b
 android.ndk_path =
 android.sdk_path =
-
+android.accept_sdk_license = True
 # 架构（华为平板多为 arm64-v8a）
 android.archs = arm64-v8a
 
