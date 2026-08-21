@@ -1,0 +1,79 @@
+========================================================
+  数学小天才 — 云端打包 APK 超简指南（5 步拿到安装包）
+========================================================
+
+我已经在工程里配好了 GitHub Actions 自动打包配置
+（.github/workflows/build_apk.yml），你只需做下面几步，
+无需在电脑上安装任何开发工具，15-20 分钟后就能下载到
+可以直接安装到华为平板的 .apk 文件。
+
+
+--- 第 1 步：注册 GitHub（如已有可跳过）---
+  打开 https://github.com 注册一个免费账号，记住用户名。
+
+
+--- 第 2 步：在 GitHub 上新建一个空仓库 ---
+  1. 登录后点右上角 "+" → "New repository"
+  2. Repository name 填：kids-math-game
+  3. 选择 Public（公开，免费账户才能用 Actions）
+  4. ⚠️ 不要勾选 "Add a README file"
+  5. 点 "Create repository"
+
+
+--- 第 3 步：把我给你的工程推上去 ---
+  方式 A（最简单，用 GitHub Desktop）：
+    1. 下载安装 https://desktop.github.com
+    2. File → Add local repository → 选解压后的 kids_math_kivy 文件夹
+    3. 按提示把仓库发布到刚才建的 kids-math-game
+    4. 点 "Publish branch"
+
+  方式 B（用命令行，我已写好脚本）：
+    1. 编辑 kids_math_kivy/setup_repo.sh，把前两行改成你的信息：
+         GITHUB_USER="你的用户名"
+         REPO_NAME="kids-math-game"
+    2. 在该文件夹打开终端，运行：
+         bash setup_repo.sh
+
+
+--- 第 4 步：触发云端打包 ---
+  1. 打开浏览器进 https://github.com/你的用户名/kids-math-game/actions
+  2. 左侧点 "Build APK"
+  3. 右侧点 "Run workflow" → 再点绿色的 "Run workflow"
+  4. 页面会出现一个黄色圆点 → 等它变绿勾（约 15-20 分钟）
+
+
+--- 第 5 步：下载 APK ---
+  1. 点进那个绿色勾的工作流运行记录
+  2. 滚动到底部 "Artifacts" 区域
+  3. 点 "kids-math-game-apk" 下载（是个 zip）
+  4. 解压得到 bin/数学小天才-*.apk
+
+
+--- 安装到华为平板 ---
+  1. 把 .apk 通过微信/QQ/数据线传到平板
+  2. 平板设置 → 安全 → 关闭"纯净模式"（允许安装外部应用）
+  3. 用文件管理器点击 .apk 安装
+  4. 首次打开会请求麦克风、摄像头权限，全部允许
+
+
+--- 常见问题 ---
+  Q：Actions 跑失败了？
+  A：点进工作流看日志，最常见是网络拉 SDK 慢，点右上角"Re-run jobs"重试。
+
+  Q：下载的 zip 里没有 .apk？
+  A：说明构建失败，看 Actions 日志末尾的报错，通常是依赖版本问题。
+
+  Q：能直接发我 .apk 吗？
+  A：我所在的环境无法访问 GitHub 来触发构建并取回文件，
+     所以必须通过你的 GitHub 账号走云端构建，这是目前最稳的方式。
+
+
+--- 工程里我已经配好的关键文件 ---
+  .github/workflows/build_apk.yml   ← 自动打包脚本（核心）
+  setup_repo.sh                     ← 一键推送脚本
+  buildozer.spec                    ← 安卓打包配置
+  README.md                         ← 完整技术文档
+  main.py / config.py / ...         ← 游戏全部源码
+
+
+祝你和孩子玩得开心！🌈
