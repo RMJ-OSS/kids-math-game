@@ -44,11 +44,9 @@ jobs:
 
       - name: Download + rename Vosk Chinese model
         run: |
-          # 下载中文小模型
-          wget -q https://alphacephei.com/vosk/models/vosk-model-small-zh-cn-0.22.zip -O model.zip
+          wget https://alphacephei.com/vosk/models/vosk-model-small-cn-0.22.zip -O model.zip
           unzip -q model.zip
-          # 重命名为 voice.py 期望的 model-zh
-          mv vosk-model-small-zh-cn-0.22 model-zh
+          mv vosk-model-small-cn-0.22 model-zh
           ls model-zh/ | head
 
       - name: Build APK (debug)
