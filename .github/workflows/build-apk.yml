@@ -52,6 +52,7 @@ jobs:
       - name: Build APK (debug)
         env:
           URL_freetype: https://download-mirror.savannah.gnu.org/releases/freetype/freetype-{version}.tar.gz
+          VERSION_numpy: v2.3.5
         run: |
           set -o pipefail
           buildozer -v android debug 2>&1 | tee build.log
