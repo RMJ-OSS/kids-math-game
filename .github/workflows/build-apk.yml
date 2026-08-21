@@ -50,6 +50,8 @@ jobs:
           ls model-zh/ | head
 
       - name: Build APK (debug)
+        env:
+          URL_freetype: https://download-mirror.savannah.gnu.org/releases/freetype/freetype-{version}.tar.gz
         run: |
           set -o pipefail
           buildozer -v android debug 2>&1 | tee build.log
