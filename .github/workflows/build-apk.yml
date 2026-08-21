@@ -51,6 +51,7 @@ jobs:
 
       - name: Build APK (debug)
         run: |
+          set -o pipefail
           buildozer -v android debug 2>&1 | tee build.log
 
       - name: Upload APK artifact
