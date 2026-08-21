@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Buildozer
+.buildozer/
+bin/
+.kivy/
+
+# 运行时数据（保留目录结构）
+data/leaderboard.json
+data/avatars/*
+!data/avatars/.gitkeep
+
+# 语音模型（用户自行下载）
+vosk-model-*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# WSL
+.wslconfig
