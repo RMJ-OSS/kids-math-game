@@ -34,7 +34,32 @@ from voice import VoiceRecognizer
 from tts import TTS
 from countdown_ring import CountdownRing
 from celebrate import CelebrateOverlay
+import os
+from kivy.core.text import LabelBase
+from kivy.lang import Builder
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CN_FONT = os.path.join(
+    BASE_DIR,
+    "fonts",
+    "NotoSansSC-Regular.ttf"
+)
+
+LabelBase.register(
+    name="CNFont",
+    fn_regular=CN_FONT
+)
+
+Builder.load_string(f"""
+<Label>:
+    font_name: "{CN_FONT}"
+
+<Button>:
+    font_name: "{CN_FONT}"
+
+<TextInput>:
+    font_name: "{CN_FONT}"
+""")
 # ============================================================
 # 全局 Window 设置
 # ============================================================
