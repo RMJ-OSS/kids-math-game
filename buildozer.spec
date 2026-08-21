@@ -8,6 +8,7 @@ version = 1.0
 # 源码目录
 source.dir = .
 source.include_exts = py,png,jpg,jpeg,kv,atlas,json,wav,mp3
+source.include_patterns = model-zh/**
 source.exclude_exts = spec,md
 source.exclude_dirs = tests, __pycache__, .git
 
@@ -19,7 +20,7 @@ requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.1,vosk==0.3.45,nump
 
 # 权限（华为/安卓通用）
 android.permissions = RECORD_AUDIO, CAMERA, INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
-android.features = android.hardware.microphone, android.hardware.camera
+# android.features = android.hardware.microphone, android.hardware.camera
 
 # Android 版本
 android.api = 33
