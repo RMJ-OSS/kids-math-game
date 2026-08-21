@@ -15,7 +15,7 @@ source.exclude_dirs = tests, __pycache__, .git
 main.filename = main.py
 
 # 依赖（关键）
-requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.1,vosk==0.3.45,pyaudio==0.2.13,numpy,pillow
+requirements = python3==3.11.9,hostpython3==3.11.9,kivy==2.3.1,vosk==0.3.45,pyaudio==0.2.13,numpy==2.3.5,pillow
 
 # 权限（华为/安卓通用）
 android.permissions = RECORD_AUDIO, CAMERA, INTERNET, WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE
