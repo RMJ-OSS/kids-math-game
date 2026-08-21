@@ -7,7 +7,7 @@ package.domain = com.kidsmath
 version = 1.0
 # 源码目录
 source.dir = .
-source.include_exts = py,png,jpg,jpeg,kv,atlas,json,wav,mp3
+source.include_exts = py,png,jpg,jpeg,kv,atlas,json,wav,mp3,mdl,fst,conf,int,dubm,ie,stats,txt
 source.include_patterns = model-zh/**
 source.exclude_exts = spec,md
 source.exclude_dirs = tests, __pycache__, .git
