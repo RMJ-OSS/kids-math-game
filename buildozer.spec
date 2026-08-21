@@ -4,7 +4,7 @@
 title = KidsMath
 package.name = kidsmath
 package.domain = com.kidsmath
-
+version = 1.0
 # 源码目录
 source.dir = .
 source.include_exts = py,png,jpg,jpeg,kv,atlas,json,wav,mp3
